@@ -28,9 +28,9 @@ def postJob(request):
             scheduled_at = scheduled_at,
             priority = priority
         )
-        Job.save()
+        job.save()
         
-        return JsonResponse({'message': 'email schedule created success', 'job_id': job.id}, status=201)
+        return JsonResponse({'message': 'email schedule created success', 'job_id': job.job_Id}, status=201)
     
     except json.JSONDecodeError:
         return JsonResponse({'error': 'Invalid '}, status = 400)

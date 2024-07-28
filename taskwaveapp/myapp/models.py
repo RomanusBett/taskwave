@@ -34,7 +34,7 @@ class Job(models.Model):
         return self.created_at and self.scheduled_at > timezone.now()
     
     def schedule(self, run_at):
-        self.schedule = run_at
+        self.schedule_at = run_at
         self.save()
         
     def mark_as_completed(self):
