@@ -16,9 +16,10 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from myapp import views
+from myapp import views, emails
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('tasks/create', views.postJob, name='createJob')
+    path('tasks/create', views.postJob, name='createJob'),
+    path('tasks/send', emails.scheduledSend, name='sendEmail')
 ]
