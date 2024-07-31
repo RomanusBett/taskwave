@@ -7,10 +7,9 @@ load_dotenv()
 
 def scheduledSend():
     try:
-        email = EmailMessage('subject', 'Body', to=['bettromanus@gmail.com'])
+        email = EmailMessage('subject', 'Body', to=[''])
         email.send()
     
     except Exception as e:
         print(e)
 
-scheduledSend()
