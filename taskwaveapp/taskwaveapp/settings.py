@@ -45,6 +45,7 @@ INSTALLED_APPS = [
     'myapp',
     'corsheaders',
     'rest_framework',
+    'django_crontab',
 ]
 
 MIDDLEWARE = [
@@ -56,6 +57,12 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
+
+
+CRONJOBS = [
+    ('* * * * *', 'myapp.emailcron')
+]
+
 
 ROOT_URLCONF = 'taskwaveapp.urls'
 
